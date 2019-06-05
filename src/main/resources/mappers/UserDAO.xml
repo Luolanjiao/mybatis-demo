@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserDAO">
+    <select id="getUserById" resultType="com.example.demo.model.User">
+        select * from User where id=#{id}
+    </select>
+    <insert id="saveUser" parameterType="com.example.demo.model.User">
+        INSERT INTO User(name, addr) VALUES (#{name},#{addr})
+    </insert>
+    <update id="updateUser">
+        UPDATE User GET name=#{name},addr=#{addr}
+    </update>
+    <delete id="deleteUser">
+        DELETE User WHERE id=#{id}
+    </delete>
+</mapper>
